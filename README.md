@@ -210,3 +210,8 @@ Once decent oscillation sizes have been found, we slowly increase the gain to st
 
 Pushing the gain even further will eventuall de-stabilize the system.
 ![Fig1_More_Gain](https://user-images.githubusercontent.com/3331022/110696427-5249f700-81a8-11eb-88f5-5e4e9b51bca4.png)
+
+# Automated Hyperparameter Tuning
+In future work we will add algorithms that automatically tune the hyperparameters and adjust them in real time while the system is running. A few preliminary efforts towards this have shown promise, as the algorithm was able to adjust its own parameters based on analytic estimates for maximizing the light output power of the EuXFEL, as described in this work:
+
+https://doi.org/10.1103/PhysRevAccelBeams.22.082802
