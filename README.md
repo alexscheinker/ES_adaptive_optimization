@@ -200,7 +200,7 @@ Once the dithering frequencies and ES time step size have been defined, I recomm
 
 A few images generated using the attached python code show this procedure.
 
-First, with gain <imgsrc="https://render.githubusercontent.com/render/math?math=k_{ES}=0"> and very small dithering amplitudes <img src="https://render.githubusercontent.com/render/math?math=a_{ES}>0"> hardly any influence on the cost function relative to the noise is visible (left) until the amplitudes are increased (right):
+First, with gain <img src="https://render.githubusercontent.com/render/math?math=k_{ES}=0"> and very small dithering amplitudes <img src="https://render.githubusercontent.com/render/math?math=a_{ES}>0"> hardly any influence on the cost function relative to the noise is visible (left) until the amplitudes are increased (right):
 ![Fig1_NoGain](https://user-images.githubusercontent.com/3331022/110696625-89b8a380-81a8-11eb-92ab-59b0fe0d97a2.png)
 
 
