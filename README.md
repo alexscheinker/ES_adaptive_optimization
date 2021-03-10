@@ -22,7 +22,6 @@ and user-defined feedback controls
 The original paper can be found here: 
 
 *Scheinker, Alexander, and Miroslav Krstić. "Minimum-seeking for CLFs: Universal semiglobally stabilizing feedback under unknown control directions." IEEE Transactions on Automatic Control 58.5 (2012): 1107-1122.*
-
 https://ieeexplore.ieee.org/abstract/document/6332483
 
 In this approach, the functions <img src="https://render.githubusercontent.com/render/math?math=g_i(\mathbf{x},t)"> which multiply the control inputs 
@@ -39,18 +38,15 @@ where the goal is simultaneous stabilization and minimization of a noise-corrupt
 Those papers can be found here:
 
 *Scheinker, Alexander, and David Scheinker. "Bounded extremum seeking with discontinuous dithers." Automatica 69 (2016): 250-257.*
-
 https://doi.org/10.1016/j.automatica.2016.02.023
 
 *Scheinker, Alexander, and David Scheinker. "Constrained extremum seeking stabilization of systems not affine in control." International Journal of Robust and Nonlinear Control 28.2 (2018): 568-581.*
-
 https://doi.org/10.1002/rnc.3886
 
 The method has also been used for reinforcement learning (RL) applications in which an optimal feedback policy is learned online
 for unknown systems with unknown objective functions purely from measurements of system dynamics, which can be found here:
 
 *Scheinker, Alexander, and David Scheinker. "Extremum seeking for optimal control problems with unknown time‐varying systems and unknown objective functions." International Journal of Adaptive Control and Signal Processing (2020).*
-
 https://doi.org/10.1002/acs.3097
 
 Because this dynamic feedback for stabilization and optimization is model-independent, can tune multiple parameters simultaneously
@@ -60,19 +56,16 @@ This method has now been applied to accelerators around the world including adap
 diagnostics at the Facility for Advanced Accelerator Experimental Tests (FACET) at SLAC National Accelerator Laboratory:
 
 *Scheinker, Alexander, and Spencer Gessner. "Adaptive method for electron bunch profile prediction." Physical Review Special Topics-Accelerators and Beams 18.10 (2015): 102801.*
-
 https://doi.org/10.1103/PhysRevSTAB.18.102801
 
 For resonance control of RF accelerating cavities at the Los Alamos Neutron Science Center (LANSCE) linear accelerator at Los Alamos National Laboratory:
 
 *Scheinker, Alexander. "Application of extremum seeking for time-varying systems to resonance control of RF cavities." IEEE Transactions on Control Systems Technology 25.4 (2016): 1521-1528.*
-
 https://ieeexplore.ieee.org/abstract/document/7565566
 
 For real-time adaptive beam trajectory control in a time-varying magnetic lattice at the SPEAR3 light source at SLAC National Accelerator Laboratory:
 
 *Scheinker, Alexander, Xiaobiao Huang, and Juhao Wu. "Minimization of betatron oscillations of electron beam injected into a time-varying lattice via extremum seeking." IEEE Transactions on Control Systems Technology 26.1 (2017): 336-343.*
-
 https://ieeexplore.ieee.org/abstract/document/7859370
 
 It has been combined with machine learning (ML) in a first demonstration of adaptive machine learning (AML) for time varying systems
@@ -80,31 +73,26 @@ for the automatic control of the longitudinal phase space (LPS) of the electron 
 at SLAC National Accelerator Laboratory:
 
 *Scheinker, Alexander, et al. "Demonstration of model-independent control of the longitudinal phase space of electron beams in the linac-coherent light source with femtosecond resolution." Physical review letters 121.4 (2018): 044801.*
-
 https://doi.org/10.1103/PhysRevLett.121.044801
 
 It has been used for maximizing the output power of both the LCLS and the European XFEL FEL light sources:
 
 *Scheinker, Alexander, et al. "Model-independent tuning for maximizing free electron laser pulse energy." Physical Review Accelerators and Beams 22.8 (2019): 082802.*
-
 https://doi.org/10.1103/PhysRevAccelBeams.22.082802
 
 It has been implemented for real-time online multi-objective optimization of a time-varying system at the AWAKE plasma wakefield accelerator faciltiy at CERN:
 
 *Scheinker, Alexander, et al. "Online multi-objective particle accelerator optimization of the AWAKE electron beam line for simultaneous emittance and orbit control." AIP Advances 10.5 (2020): 055320.*
-
 https://doi.org/10.1063/5.0003423
 
 It has been utilized in an adaptive ML approach for automatically recovering 3D electron density maps in 3D coherent X-ray diffraction imaging:
 
 *Scheinker, Alexander, and Reeju Pokharel. "Adaptive 3D convolutional neural network-based reconstruction method for 3D coherent diffraction imaging." Journal of Applied Physics 128.18 (2020): 184901.*
-
 https://doi.org/10.1063/5.0014725
 
 And this method has been utilized at the HiRES ultrafast electron diffraction (UED) beamline at Lawrence Berkeley National Laboratory:
 
 *Scheinker, Alexander, et al. "Demonstration of adaptive machine learning-based distribution tracking on a compact accelerator: Towards enabling model-based 6D non-invasive beam diagnostics." arXiv preprint arXiv:2102.10510 (2021).*
-
 https://arxiv.org/abs/2102.10510
 
 # Iterative Algorithm Description
@@ -245,5 +233,4 @@ Pushing the gain even further will eventuall de-stabilize the system.
 In future work we will add algorithms that automatically tune the hyperparameters and adjust them in real time while the system is running. A few preliminary efforts towards this have shown promise, as the algorithm was able to adjust its own parameters based on analytic estimates for maximizing the light output power of the EuXFEL, as described in this work:
 
 *Scheinker, Alexander, et al. "Model-independent tuning for maximizing free electron laser pulse energy." Physical Review Accelerators and Beams 22.8 (2019): 082802.*
-
 https://doi.org/10.1103/PhysRevAccelBeams.22.082802
