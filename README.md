@@ -162,6 +162,51 @@ next choose the ES time step as a small quantity relative to the dithering frequ
 
 <img src="https://render.githubusercontent.com/render/math?math=\Delta_{ES} = \frac{2\pi}{10\times 1.75}.">
 
-This choice ensures that the time-step is small enough so that the finite-difference approximation of ES dynamics is accurate with the highest frequency component requiring at least 10 steps to complete one full oscillation. Noe that with this approach the ES time step will always be the same regardless of the number of parameters being tuned, with N parameters using the frequencies
+This choice ensures that the time-step is small enough so that the finite-difference approximation of ES dynamics is accurate with the highest frequency component requiring at least 10 steps to complete one full oscillation. Noe that with this approach the ES time step will always be the same regardless of the number of parameters being tuned, with N parameters using the N frequencies
 
-<img src="https://render.githubusercontent.com/render/math?math=\{\omega_1, \dots , \omega_N\} = \{ 1.0, \dots, 1.75 \}, \quad \Delta_{ES} = \frac{2\pi}{10\times 1.75}.">
+<img src="https://render.githubusercontent.com/render/math?math=\{\omega_1, \dots , \omega_N\} = \{ 1.0, \dots, 1.75 \}">
+
+and the same ES time step
+
+<img src="https://render.githubusercontent.com/render/math?math=\Delta_{ES} = \frac{2\pi}{10\times 1.75}.">
+
+One way to help speed up convergence is for a system with 2N parameters to only use the N frequencies and times step:
+
+<img src="https://render.githubusercontent.com/render/math?math=\{\omega_1, \dots , \omega_N\} = \{ 1.0, \dots, 1.75 \}, \quad \Delta_{ES} = \frac{2\pi}{10\times 1.75},">
+
+and to alternate parameter updates between cosine and sine functions which are orthogonal in Hilbert space, so the setup might look like:
+
+<img src="https://render.githubusercontent.com/render/math?math=x_1(n %2B 1) = x_1(n) %2B \Delta_{ES} \sqrt{a_{ES}\omega_{1}}\cos(\omega_{1} n \Delta_{ES} %2B k_{ES} y(n)),">
+
+<img src="https://render.githubusercontent.com/render/math?math=x_2(n %2B 1) = x_2(n) %2B \Delta_{ES} \sqrt{a_{ES}\omega_{1}}\sin(\omega_{1} n \Delta_{ES} %2B k_{ES} y(n)),">
+
+<img src="https://render.githubusercontent.com/render/math?math=x_3(n %2B 1) = x_3(n) %2B \Delta_{ES} \sqrt{a_{ES}\omega_{2}}\cos(\omega_{2} n \Delta_{ES} %2B k_{ES} y(n)),">
+
+<img src="https://render.githubusercontent.com/render/math?math=x_4(n %2B 1) = x_4(n) %2B \Delta_{ES} \sqrt{a_{ES}\omega_{2}}\sin(\omega_{2} n \Delta_{ES} %2B k_{ES} y(n)),">
+
+<img src="https://render.githubusercontent.com/render/math?math=\vdots">
+
+<img src="https://render.githubusercontent.com/render/math?math=x_{2N-1}(n %2B 1) = x_{2N-1}(n) %2B \Delta_{ES} \sqrt{a_{ES}\omega_{N}}\cos(\omega_{N} n \Delta_{ES} %2B k_{ES} y(n)),">
+
+<img src="https://render.githubusercontent.com/render/math?math=x_{2N}(n %2B 1) = x_{2N}(n) %2B \Delta_{ES} \sqrt{a_{ES}\omega_{N}}\sin(\omega_{N} n \Delta_{ES} %2B k_{ES} y(n)).">
+
+It is also possible to try to speed up convergence by increasing the time step to something like
+
+<img src="https://render.githubusercontent.com/render/math?math=\Delta_{ES} = \frac{2\pi}{5\times 1.75},">
+
+but you should be careful, it can destabilize the algorithm. Usually some trial and error helps you find the limit of how far you can push it.
+
+Once the dithering frequencies and ES time step size have been defined, I recommend starting with the ES feedback gain and amplitude both set to zero, <img src="https://render.githubusercontent.com/render/math?math=k_{ES}=0, a_{ES}=0">, and then slowly begin to increase only the dithering ampltidue <img src="https://render.githubusercontent.com/render/math?math=a_{ES}"> until you see that the parameters are making big enough changes that they are observable in the noisy measurement function. Once the perturbation size is decent, you can slowly turn up the gain <img src="https://render.githubusercontent.com/render/math?math=k_{ES}"> so that the system starts to respond.
+
+A few images generated using the attached python code show this procedure.
+
+First, with gain <imgsrc="https://render.githubusercontent.com/render/math?math=k_{ES}=0"> and very small dithering amplitudes <imgsrc="https://render.githubusercontent.com/render/math?math=a_{ES}>0"> hardly any influence on the cost function relative to the noise is visible (left) until the amplitudes are increased (right):
+![Fig1_NoGain](https://user-images.githubusercontent.com/3331022/110696625-89b8a380-81a8-11eb-92ab-59b0fe0d97a2.png)
+
+
+Once decent oscillation sizes have been found, we slowly increase the gain to start convergence:
+![Fig1_Gain](https://user-images.githubusercontent.com/3331022/110696776-ba004200-81a8-11eb-9902-3bbe40632853.png)
+
+
+Pushing the gain even further will eventuall de-stabilize the system.
+![Fig1_More_Gain](https://user-images.githubusercontent.com/3331022/110696427-5249f700-81a8-11eb-88f5-5e4e9b51bca4.png)
