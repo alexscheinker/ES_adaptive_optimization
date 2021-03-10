@@ -1,4 +1,10 @@
 # ES_adaptive_optimization
+If this algorithm turns out to be useful for you, please consider citing the following work which uses the latest bounded version in a first demonstration of adaptive machine learning (AML) in which ES was combined with neural networks for automated control of electron beams in the Linac Coherent Light Source (LCLS) free electron laser (FEL) at SLAC National Accelerator Laboratory:
+
+A. Scheinker, et al. "Demonstration of model-independent control of the longitudinal phase space of electron beams in the linac-coherent light source with femtosecond resolution." Physical review letters 121.4 (2018): 044801.
+
+https://doi.org/10.1103/PhysRevLett.121.044801
+
 
 # Introduction and Background
 Extremum seeking (ES) is a bounded, model-independent adaptive feedback algorithm for automatic tuning of 
