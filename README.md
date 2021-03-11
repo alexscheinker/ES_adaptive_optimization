@@ -180,11 +180,11 @@ next choose the ES time step as a small quantity relative to the dithering frequ
 
 <img src="https://render.githubusercontent.com/render/math?math=\Delta_{ES} = \frac{2\pi}{10\times 1.75}.">
 
-This choice ensures that the time-step is small enough so that the finite-difference approximation of ES dynamics is accurate with the highest frequency component requiring at least 10 steps to complete one full oscillation. Noe that with this approach the ES time step will always be the same regardless of the number of parameters being tuned, with N parameters using the N frequencies
+This choice ensures that the time-step is small enough so that the finite-difference approximation of ES dynamics is accurate with the highest frequency component requiring at least 10 steps to complete one full oscillation. Note that with this approach the ES time step will always be the same regardless of the number of parameters being tuned, with N parameters using the N frequencies
 
 <img src="https://render.githubusercontent.com/render/math?math=\{\omega_1, \dots , \omega_N\} = \{ 1.0, \dots, 1.75 \}">
 
-and the same ES time step
+we can use the same ES time step
 
 <img src="https://render.githubusercontent.com/render/math?math=\Delta_{ES} = \frac{2\pi}{10\times 1.75}.">
 
@@ -218,16 +218,17 @@ Once the dithering frequencies and ES time step size have been defined, I recomm
 
 A few images generated using the attached python code show this procedure.
 
-First, with gain <img src="https://render.githubusercontent.com/render/math?math=k_{ES}=0"> and very small dithering amplitudes <img src="https://render.githubusercontent.com/render/math?math=a_{ES}>0"> hardly any influence on the cost function relative to the noise is visible (left) until the amplitudes are increased (right):
-![Fig1_NoGain](https://user-images.githubusercontent.com/3331022/110696625-89b8a380-81a8-11eb-92ab-59b0fe0d97a2.png)
+First, with gain <img src="https://render.githubusercontent.com/render/math?math=k_{ES}=0"> and very small dithering amplitudes <img src="https://render.githubusercontent.com/render/math?math=a_{ES}>0"> hardly any influence on the cost function relative to the noise is visible (top) until the amplitudes are increased (bottom):
+![Fig1_NoGain](https://user-images.githubusercontent.com/3331022/110808924-af45bb80-8241-11eb-9abb-a16fd23ab253.png)
 
 
 Once decent oscillation sizes have been found, we slowly increase the gain to start convergence:
-![Fig1_Gain](https://user-images.githubusercontent.com/3331022/110696776-ba004200-81a8-11eb-9902-3bbe40632853.png)
+![Fig1_Gain](https://user-images.githubusercontent.com/3331022/110809357-0b104480-8242-11eb-82d6-fddcfe222d95.png)
 
 
 Pushing the gain even further will eventuall de-stabilize the system.
-![Fig1_More_Gain](https://user-images.githubusercontent.com/3331022/110696427-5249f700-81a8-11eb-88f5-5e4e9b51bca4.png)
+![Fig1_More_Gain](https://user-images.githubusercontent.com/3331022/110809397-15324300-8242-11eb-8899-09864389294d.png)
+
 
 # Automated Hyperparameter Tuning
 In future work we will add algorithms that automatically tune the hyperparameters and adjust them in real time while the system is running. A few preliminary efforts towards this have shown promise, as the algorithm was able to adjust its own parameters based on analytic estimates for maximizing the light output power of the EuXFEL, as described in this work:
