@@ -1,5 +1,5 @@
 # ES_adaptive_optimization
-If this algorithm turns out to be useful for you, please consider citing the following work which uses the latest bounded version in a first demonstration of adaptive machine learning (AML) in which ES was combined with neural networks for automated control of electron beams in the Linac Coherent Light Source (LCLS) free electron laser (FEL) at SLAC National Accelerator Laboratory:
+If this algorithm turns out to be useful for you and you'd like to cite it, the following paper used the latest bounded version in a first demonstration of adaptive machine learning (AML) in which ES was combined with neural networks for automated control of the phase space of electron beams in the Linac Coherent Light Source (LCLS) free electron laser (FEL) at SLAC National Accelerator Laboratory:
 
 *Alexander Scheinker, Auralee Edelen, Dorian Bohler, Claudio Emma, and Alberto Lutman. "Demonstration of model-independent control of the longitudinal phase space of electron beams in the linac-coherent light source with femtosecond resolution." Physical review letters 121.4 (2018): 044801.*
 
