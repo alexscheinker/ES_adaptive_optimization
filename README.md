@@ -1,7 +1,7 @@
 # ES_adaptive_optimization
 If this algorithm turns out to be useful for you, please consider citing the following work which uses the latest bounded version in a first demonstration of adaptive machine learning (AML) in which ES was combined with neural networks for automated control of electron beams in the Linac Coherent Light Source (LCLS) free electron laser (FEL) at SLAC National Accelerator Laboratory:
 
-*Scheinker, Alexander, Auralee Edelen, Dorian Bohler, Claudio Emma, and Alberto Lutman. "Demonstration of model-independent control of the longitudinal phase space of electron beams in the linac-coherent light source with femtosecond resolution." Physical review letters 121.4 (2018): 044801.*
+*Alexander Scheinker, Auralee Edelen, Dorian Bohler, Claudio Emma, and Alberto Lutman. "Demonstration of model-independent control of the longitudinal phase space of electron beams in the linac-coherent light source with femtosecond resolution." Physical review letters 121.4 (2018): 044801.*
 
 https://doi.org/10.1103/PhysRevLett.121.044801
 
@@ -72,7 +72,7 @@ It has been combined with machine learning (ML) in a first demonstration of adap
 for the automatic control of the longitudinal phase space (LPS) of the electron beam in the Linac Coherent Light Source (LCLS) free electron laser (FEL)
 at SLAC National Accelerator Laboratory:
 
-*Scheinker, Alexander, Auralee Edelen, Dorian Bohler, Claudio Emma, and Alberto Lutman. "Demonstration of model-independent control of the longitudinal phase space of electron beams in the linac-coherent light source with femtosecond resolution." Physical review letters 121.4 (2018): 044801.*
+*Alexander Scheinker, Auralee Edelen, Dorian Bohler, Claudio Emma, and Alberto Lutman. "Demonstration of model-independent control of the longitudinal phase space of electron beams in the linac-coherent light source with femtosecond resolution." Physical review letters 121.4 (2018): 044801.*
 https://doi.org/10.1103/PhysRevLett.121.044801
 
 It has been used for maximizing the output power of both the LCLS and the European XFEL FEL light sources:
